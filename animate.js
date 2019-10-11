@@ -89,6 +89,7 @@ const vidClose = (evt) => {
     vid.classList.add('fadeOut');
     vid.classList.add('animated');
     vid.pause();
+    vid.currentTime = 0;
 }
 
 let toBeEnlrg = document.getElementsByClassName('hoverEnl');

@@ -91,6 +91,9 @@ a {
 }
 
 .bubVid {
+    border-top-left-radius: 25px;
+    position: absolute;
+    z-index: 5;
     width: 100%;
     pointer-events: none;
     opacity: 0;
