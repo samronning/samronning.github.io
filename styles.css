@@ -86,3 +86,10 @@ span {
 a {
     text-decoration: underline;
 }
+
+footer {
+    text-align: center;
+    margin: 10px 5px;
+    margin-top: 30px;
+    font-size: 1.3rem;
+}
