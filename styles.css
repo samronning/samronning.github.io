@@ -107,6 +107,15 @@ a {
     height: 100%;
 }
 
+@media(orientation: portrait) {
+    .bubVid {
+        position: absolute;
+        opacity: 100;
+        pointer-events: all;
+        width: 500px;
+    }
+}
+
 footer {
     text-align: center;
     margin: 10px 5px;

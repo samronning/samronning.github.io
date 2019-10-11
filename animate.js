@@ -1,11 +1,16 @@
 //----------------------------------------------------------------------------
 //VIDEO HANDLING BEGIN
 //----------------------------------------------------------------------------
-Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-    get: function(){
-        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+
+//PHONE USERS REQUIRE CONTROL
+let phone = window.matchMedia("(orientation: portrait)");
+if (phone.matches) {
+    let vids = document.getElementsByTagName('video');
+    for (let i = 0; i < vids.length; i++) {
+        let vid = vids[i];
+        vid.controls = "true";
     }
-})
+}
 
 const enlarge = (evt) => {
     if (evt.target.classList.contains('hoverEnl')) {
@@ -53,6 +58,10 @@ const vidOpen = (evt) => {
             extra = c[i];
         }
     }
+
+    if (phone.matches) {
+        vid.style.pointerEvents = "all";
+    }
     vid.play();
     extra.classList.remove('fadeIn');
     extra.classList.remove('fadeOut');
@@ -95,10 +104,12 @@ const vidClose = (evt) => {
 let toBeEnlrg = document.getElementsByClassName('hoverEnl');
 
 for (let i = 0; i < toBeEnlrg.length; i++) {
-    toBeEnlrg[i].addEventListener("mouseover", enlarge);
-    toBeEnlrg[i].addEventListener("mouseover", vidOpen);
-    toBeEnlrg[i].addEventListener("mouseout", deEnlarge);
-    toBeEnlrg[i].addEventListener("mouseout", vidClose);
+    if (!phone.matches) {
+        toBeEnlrg[i].addEventListener("mouseover", enlarge);
+        toBeEnlrg[i].addEventListener("mouseover", vidOpen);
+        toBeEnlrg[i].addEventListener("mouseout", deEnlarge);
+        toBeEnlrg[i].addEventListener("mouseout", vidClose);
+    }
 }
 //----------------------------------------------------------------------------
 //VIDEO HANDLING END
