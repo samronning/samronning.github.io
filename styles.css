@@ -6,17 +6,17 @@
 }
 
 html {
-    background-color: black;
-    background-image: url("./images/code2.jpg");
-    background-size: cover;
+    background-color: darkslategray;
 }
 
+@media(min-width: 700px) {
 body {
     border-radius: 0px 0px 12px 12px;
     margin: 0 auto;
     max-width: 80%;
     background-color: slategray;
     padding-bottom: 0.5rem;
+}
 }
 
 h1, h2 {
@@ -25,24 +25,59 @@ h1, h2 {
     margin: 0 auto;
 }
 p {
-  padding: 5px;
-  border-radius: 3px;
-  border: 1px white solid; 
-  display: block;
-  width: 80%;
+  padding: 1rem;
+  width: 18rem;
   max-width: 600px;
   margin: 0px auto 0px auto;
   font-size: 30px;
 }
 
-#boxes {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 auto;
-    justify-content: center;
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 auto;
+        justify-content: space-evenly;
+    }
+
+.pNav {
+    padding: 0;
+    margin: 5px 20px;
 }
 
-#boxes img {
+/*.pNav img {
+    margin: 10px 0;
+    border-radius: 30px;
+}*/
+
+.pNav .bubble {
+    width: 500px;
+    height: 500px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: rgb(24, 24, 24);
+    margin: 10px 0 0 0;
+}
+
+.pNav .bubble h1 {
+    background-color: black;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 0;
+}
+
+.pNav .bubText {
+    align-items: center;
+    border: white 1px solid;
+    border-bottom-right-radius: 30px;
+    border-top: none;
+}
+
+#gp {
+    background-image: url("./images/grav_paul.jpg");
+}
+
+#gl {
+    background-image: url("./images/learn_GL.jpg");
 }
 
 span {
