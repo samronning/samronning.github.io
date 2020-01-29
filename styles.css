@@ -83,6 +83,10 @@ p {
     background-image: url("./images/learn_GL.jpg");
 }
 
+#eu {
+    background-image: url("./images/euker.jpg");
+}
+
 span {
     font-weight: bold;
 }
